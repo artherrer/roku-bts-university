@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<component name="DetailScreen" extends="Group" initialFocus="playButton">
+    <script type="text/brightscript" uri="DetailScreen.brs" />
+    <interface>
+        <field id="posterGridNode" type="node" />
+        <field id="jumpToItem" type="integer" onChange="OnJumpToItem" value="0" alwaysNotify="true" />
+        <field id="itemFocused" type="integer" alwaysNotify="true" />
+        <field id="playButtonSelected" type="int" alwaysnotify="true" alias="playButton.buttonSelected" />
+    </interface>
+    <children>
+
+        <LayoutGroup
+            translation="[160, 220]"
+            horizAlignment="left"
+            itemSpacings="[0, 50]">
+
+
+             <Rectangle
+                color="0xFFFFFF00"
+                width="460"
+                height="320">
+            
+                <Poster
+                    id="poster"
+                    width="420"
+                    height="280"
+                    translation="[20,20]" />
+            
+            </Rectangle>
+
+
+            <Label 
+                translation="[50, 50]"
+                font = "font:MediumBoldSystemFont" 
+                id="title"/>
+
+
+            <Label
+                id="description"
+                wrap="true"
+                maxLines="4"
+                width="960"/>
+
+            <Label
+                id="duration"
+                text="Duration: 2:15:31"/>
+
+            <Button 
+                id="playButton"
+                text="Play video"/>
+
+        </LayoutGroup>
+
+       
+
+        
+
+
+        <LayoutGroup
+            translation="[1420, 220]"
+            horizAlignment="left">
+
+            <Label 
+                translation="[50, 0]"
+                text="In this playlist:"/>
+
+            <PosterGrid
+                id="posterGrid"
+                basePosterSize="[380,240]"
+                itemSpacing="[32,32]"
+                caption1NumLines="1"
+                numColumns="1"
+                numRows="4"/>
+        </LayoutGroup>
+
+
+    </children>    
+</component>

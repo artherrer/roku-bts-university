@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="VideoScreen" extends="Group" initialFocus="categoryList">
+  <script type="text/brightscript" uri="pkg:/components/screens/VideoScreen/VideoScreen.brs" />
+  <interface>
+    <field id="content" type="node" />
+  </interface>
+  <children>
+   <Video
+      id="videoPlayer"
+      translation="[0,0]"
+      width="1920"
+      height="1080" />
+  </children>
+</component>

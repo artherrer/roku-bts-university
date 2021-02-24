@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component   name="ContentScreen"   extends="Group" >
+    <script type="text/brightscript" uri="pkg:/components/screens/ContentScreen/ContentScreen.brs" />
+    <interface>
+		<field id="playButtonSelected" type="int" alwaysnotify="true" alias="playButton.buttonSelected" />
+		<field id="posterGridSelected" type="int" alwaysnotify="true" alias="posterGrid.itemSelected" />
+		<field id="content" type="node"/>
+		<field id="posterGridNode" type="node"/>
+		<field id="videoNode" type="node"/>
+    </interface>
+
+    <children>
+        <LayoutGroup
+            translation="[160, 220]"
+            layoutDirection="vert"
+            horizAlignment="left"
+            itemSpacings="[40]">
+            
+                    <Label
+                        id="title"
+                        wrap="false"
+                        horizAlign="left"
+                        font="font:LargeBoldSystemFont"
+                        />
+
+                    <Label
+                        id="description"
+                        wrap="true"
+                        maxLines="4"
+                        width="960"
+                        text="This course will teach you handle the most used software technologies in the industry. Here you learn all about software development from cero to expert. Join us and enjoy it! "/>
+                    
+                    
+                    <LayoutGroup
+                        layoutDirection="horiz"
+                        vertAlignment="center">
+
+                        <Button
+                            id="playButton"
+                            text="Play all course"/>
+
+                        <Label
+                            id="time"
+                            horizAlign="center"
+                            vertAlign = "center"
+                            text="Total duration: 8:15:27"/>
+                        
+                        
+                    </LayoutGroup>
+        </LayoutGroup>
+
+        <Label 
+            translation="[160, 650]"
+            text="Included in this course:"/>
+        
+        <PosterGrid
+              id="posterGrid"
+              translation="[160, 700]"
+              basePosterSize="[380,240]"
+              itemSpacing="[32,32]"
+              caption1NumLines="1"
+              numColumns="4"/>
+
+    </children>
+</component>

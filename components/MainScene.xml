@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="MainScene" extends="Scene">
+    <script type="text/brightscript" uri="pkg:/components/MainScene.brs" />
+    <script type="text/brightscript" uri="pkg:/components/ui-logic/ScreenStackLogic.brs" />
+    <script type="text/brightscript" uri="pkg:/components/ui-logic/ContentLogic.brs" />
+    <script type="text/brightscript" uri="pkg:/components/ui-logic/CategoryScreenLogic.brs" />
+    <script type="text/brightscript" uri="pkg:/components/ui-logic/ContentScreenLogic.brs" />
+    <script type="text/brightscript" uri="pkg:/components/ui-logic/DetailScreenLogic.brs" />
+    <script type="text/brightscript" uri="pkg:/components/ui-logic/VideoScreenLogic.brs" />
+
+    <children>
+        <!-- Overhang with Roku Developers logo -->
+         <Overhang
+            id="overhang"
+            showOptions="true"
+            showClock="true"
+            logoUri="pkg:/images/hd_overhang_logo.png"
+            translation="[0,60]"
+        />
+        <!-- LoadingIndicator should be visible only in case of waiting for content -->
+        <Label
+            id="loadingIndicator"
+            text="Loading..."
+            width="1920"
+            height="1080"
+            translation="[0, 0]"
+            horizAlign="center"
+            vertAlign="center"
+            visible="false"
+            font="font:MediumBoldSystemFont"
+        />
+        
+        <KeyboardDialog 
+            id="usernameKeyboard"
+            visible="false"
+            title="Set your username"/>
+
+
+        <Dialog 
+            id="aboutDialog"
+            visible="false"
+            title="About BTS University"
+            message="BTS University is the online platform where you can learn about software technologies completely free. Join our University with thousand students arround the world!"/>
+
+        <Dialog 
+            id="optionsDialog"
+            visible="false"
+            title="Options"
+            message="Choose your option:"
+            optionsDialog="true"
+            />
+    </children>
+</component>

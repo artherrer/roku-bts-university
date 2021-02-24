@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="OptionsDialogScreen" extends="Scene" initialFocus="categoryList">
+  <script type="text/brightscript" uri="pkg:/components/screens/OptionsDialogScreen/OptionsDialogScreen.brs" />
+  <children>
+    <!-- color="0x000000" -->
+
+    <KeyboardDialog 
+        id="usernameKeyboard"
+        visible="false"
+        title="Set your username"/>
+
+
+     <Dialog 
+        id="aboutDialog"
+        visible="false"
+        title="About BTS University"
+        message="BTS University is the online platform where you can learn about software technologies completely free. Join our University with thousand students arround the world!"/>
+
+    <Dialog 
+        id="optionsDialog"
+        visible="false"
+        title="Options"
+        message="Choose your option:"
+        />
+
+  </children>
+</component>

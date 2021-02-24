@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="CategoryScreen" extends="Group" initialFocus="rowList">
+  <script type="text/brightscript" uri="pkg:/components/screens/CategoryScreen/CategoryScreen.brs" />
+  <interface>
+        <!-- <field id="content" type="node" /> -->
+        <!-- <field id="categoryItemSelected" type="intarray" alwaysnotify="true" alias="categoryList.itemSelected" /> -->
+        <!-- <field id="posterItemSelected" type="intarray" alwaysnotify="true" alias="posterGrid.itemSelected" /> -->
+        <field id="content" type="node" alias="rowList.content" />
+        <field id="rowListSelected" type="intarray" alwaysnotify="true" alias="rowList.itemSelected" />
+  </interface>
+  <children>
+    <!-- color="0x000000" -->
+
+    <LayoutGroup
+        translation="[160, 220]"
+        layoutDirection="vert"
+        horizAlignment="left"
+        itemSpacings="[40]">
+            <Label
+                id="welcomeLabel"
+                font="font:LargeBoldSystemFont"
+                text="What is BTS University?"/>
+
+            <Label
+                id="descriptionLabel"
+                wrap="true"
+                maxLines="6"
+                width="593"
+                text="BTS University is the online platform where you can learn about software technologies completely free. Join our University with thousand students arround the world!"
+            />
+            <Label
+                font="font:LargeBoldSystemFont"
+                text="What do you want to learn?"/>
+
+            <RowList
+                id="rowList"
+                numRows="2"
+                rowitemSize="[[320,180]]"
+                rowItemSpacing="[[20,0]]"
+                itemSize="[1800,270]"
+                rowLabelOffset="[[50,20]]"
+                focusXOffset="[50]"
+                showRowLabel="[true]"
+                rowFocusAnimationStyle="floatingfocus"/>
+
+
+    </LayoutGroup>
+
+
+
+    <Dialog
+    visible="false"
+    id="exitDialog"/>
+  </children>
+</component>
