@@ -3,10 +3,9 @@
 <component name="DetailScreen" extends="Group" initialFocus="playButton">
     <script type="text/brightscript" uri="DetailScreen.brs" />
     <interface>
-        <field id="posterGridNode" type="node" />
-        <field id="jumpToItem" type="integer" onChange="OnJumpToItem" value="0" alwaysNotify="true" />
-        <field id="itemFocused" type="integer" alwaysNotify="true" />
-        <field id="playButtonSelected" type="int" alwaysnotify="true" alias="playButton.buttonSelected" />
+        <field id="content" type="node" />
+        <field id="itemIndex" type="integer" value="0" alwaysNotify="true" />
+        <field id="playButton" type="int" alwaysnotify="true" alias="playButton.buttonSelected" />
     </interface>
     <children>
 
@@ -48,7 +47,7 @@
 
             <Button 
                 id="playButton"
-                text="Play video"/>
+                text="Play this lesson"/>
 
         </LayoutGroup>
 

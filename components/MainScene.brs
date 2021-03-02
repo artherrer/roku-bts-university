@@ -1,6 +1,5 @@
 function init()
-	? "===>>> [MainScene] init"
-
+    
     m.top.backgroundURI = ""
 	m.top.backgroundColor = "0x171F5E"
 	m.loadingIndicator = m.top.FindNode("loadingIndicator") ' store loadingIndicator node to m

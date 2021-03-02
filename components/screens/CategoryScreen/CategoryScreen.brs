@@ -7,7 +7,6 @@ function init()
   ' Handle Dialog on exit
   m.exitDialog = m.top.findNode("exitDialog")
   ' Handle load of Thumbnails
-  m.categorySelected = invalid
   m.rowList = m.top.findNode("rowList")
 end function
 

@@ -1,16 +1,11 @@
 sub init()
-    m.selectedVideo = invalid
-    m.description = m.top.FindNode("description")
     m.playButton = m.top.FindNode("playButton")
     m.posterGrid = m.top.FindNode("posterGrid")
-    m.thumbnail = m.top.FindNode("thumbnail")
     m.title = m.top.FindNode("title")
     
-    m.posterGrid.ObserveField("itemFocused", "OnItemFocused")
     m.top.observeField("visible", "onVisibleChange")
     m.top.observeField("content", "OnLoadContent")
-    m.top.observeField("posterGridNode", "OnLoadPosterGrid")
-    m.playButton.setFocus(true)
+    ' m.playButton.setFocus(true)
 end sub
 
 
@@ -21,17 +16,13 @@ sub onVisibleChange()
 end sub
 
 
-sub OnLoadPosterGrid()
-    m.posterGrid.content = m.top.posterGridNode
-    m.top.videoNode = m.posterGrid.content.getChild(0)
-end sub
-
-
 sub OnLoadContent()
-    categoryNode = m.top.content
-    m.title.text = categoryNode.title
+    m.title.text = m.top.content.title
+    content = CreateObject("roSGNode", "ContentNode")
+    m.posterGrid.content = m.top.content
+    m.posterGrid.jumpToItem = m.top.index
+    m.posterGrid.setFocus(true)
 end sub
-
 
 
 function onKeyEvent(key, press) as boolean

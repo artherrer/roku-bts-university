@@ -1,15 +1,15 @@
-sub ShowDetailScreen(posterGridNode, selectedItem)
+sub ShowDetailScreen(posterGridContent, itemIndex)
     m.DetailScreen = CreateObject("roSGNode", "DetailScreen")
-    m.DetailScreen.ObserveField("playButtonSelected", "OnPlayButtonSelected")
-    m.DetailScreen.posterGridNode = posterGridNode
-    m.DetailScreen.jumpToItem = selectedItem
+    m.DetailScreen.ObserveField("playButton", "OnPlayButtonSelected")
+    m.DetailScreen.itemIndex = itemIndex
+    m.DetailScreen.content = posterGridContent
     ShowScreen(m.DetailScreen)
 end sub
 
 
 
 sub OnPlayButtonSelected()
-    index = m.DetailScreen.itemFocused
-    videoNode = m.DetailScreen.posterGridNode.content.GetChild(index)
-    ShowVideoScreen(videoNode)
+     poster = m.DetailScreen.findNode("posterGrid")
+     index = m.DetailScreen.itemIndex
+    ShowVideoScreen(poster.content, index)
 end sub

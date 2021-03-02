@@ -2,11 +2,8 @@
 <component name="CategoryScreen" extends="Group" initialFocus="rowList">
   <script type="text/brightscript" uri="pkg:/components/screens/CategoryScreen/CategoryScreen.brs" />
   <interface>
-        <!-- <field id="content" type="node" /> -->
-        <!-- <field id="categoryItemSelected" type="intarray" alwaysnotify="true" alias="categoryList.itemSelected" /> -->
-        <!-- <field id="posterItemSelected" type="intarray" alwaysnotify="true" alias="posterGrid.itemSelected" /> -->
         <field id="content" type="node" alias="rowList.content" />
-        <field id="rowListSelected" type="intarray" alwaysnotify="true" alias="rowList.itemSelected" />
+        <field id="rowItemSelected" type="intarray" alwaysnotify="true" alias="rowList.rowItemSelected" />
   </interface>
   <children>
     <!-- color="0x000000" -->

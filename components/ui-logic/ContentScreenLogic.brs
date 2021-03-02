@@ -2,25 +2,26 @@
 
 ' Note that we need to import this file in MainScene.xml using relative path.
 
-sub ShowContentScreen(categoryNode)
+sub ShowContentScreen(categoryNode, index)
     m.ContentScreen = CreateObject("roSGNode", "ContentScreen")
-    m.ContentScreen.ObserveField("playButtonSelected", "OnVideoSelected")
-    m.ContentScreen.ObserveField("posterGridSelected", "OnItemSelected")
+    m.ContentScreen.ObserveField("runPlaylist", "RunPlaylist")
+    m.ContentScreen.ObserveField("itemSelected", "OnItemSelected")
+    m.ContentScreen.index = index
     m.ContentScreen.content = categoryNode
-    m.ContentScreen.posterGridNode = categoryNode
     ShowScreen(m.ContentScreen) '
 end sub
 
 
-sub OnVideoSelected()
-    videoNode = m.ContentScreen.videoNode
-    ShowVideoScreen(videoNode)
+sub RunPlaylist()
+    itemIndex = 0
+    categoryNode = m.ContentScreen.content
+    ShowVideoScreen(categoryNode, itemIndex)
 end sub
 
 
 sub OnItemSelected(event)
-    selectedItem = event.getData()
+    itemIndex = event.getData()
     posterGridNode = m.ContentScreen.findNode("posterGrid")
-    ShowDetailScreen(posterGridNode, selectedItem)
+    ShowDetailScreen(posterGridNode.content, itemIndex)
 end sub
 

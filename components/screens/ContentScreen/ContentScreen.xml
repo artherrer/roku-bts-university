@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<component   name="ContentScreen"   extends="Group" >
+<component name="ContentScreen" extends="Group" >
     <script type="text/brightscript" uri="pkg:/components/screens/ContentScreen/ContentScreen.brs" />
     <interface>
-		<field id="playButtonSelected" type="int" alwaysnotify="true" alias="playButton.buttonSelected" />
-		<field id="posterGridSelected" type="int" alwaysnotify="true" alias="posterGrid.itemSelected" />
+		<field id="runPlaylist" type="int" alwaysnotify="true" alias="playButton.buttonSelected" />
+		<field id="itemSelected" type="int" alwaysnotify="true" alias="posterGrid.itemSelected" />
 		<field id="content" type="node"/>
-		<field id="posterGridNode" type="node"/>
-		<field id="videoNode" type="node"/>
+		<field id="index" type="int"/>
     </interface>
 
     <children>
@@ -24,7 +23,6 @@
                         />
 
                     <Label
-                        id="description"
                         wrap="true"
                         maxLines="4"
                         width="960"
@@ -40,7 +38,6 @@
                             text="Play all course"/>
 
                         <Label
-                            id="time"
                             horizAlign="center"
                             vertAlign = "center"
                             text="Total duration: 8:15:27"/>

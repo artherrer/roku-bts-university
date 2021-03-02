@@ -3,12 +3,15 @@
   <script type="text/brightscript" uri="pkg:/components/screens/VideoScreen/VideoScreen.brs" />
   <interface>
     <field id="content" type="node" />
+    <field id="itemIndex" type="int" />
+    <field id="state" type="string" alias="videoPlayer.state"/>
   </interface>
   <children>
    <Video
       id="videoPlayer"
       translation="[0,0]"
       width="1920"
-      height="1080" />
+      height="1080" 
+      visible="false"/>
   </children>
 </component>

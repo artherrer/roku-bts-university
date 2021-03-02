@@ -5,36 +5,30 @@ sub init()
     m.playButton = m.top.findNode("playButton")
     m.posterGrid = m.top.findNode("posterGrid")
     
+    m.top.ObserveField("content", "OnPosterGridUpdate")
     m.posterGrid.observeField("itemFocused", "OnFocusItem")
-    m.top.ObserveField("posterGridNode", "OnPosterGridUpdate")
 end sub
 
 
-sub OnPosterGridUpdate(event)
-    node = event.getData()
-    m.posterGrid.content = node.content
+sub OnPosterGridUpdate(content)
+    m.posterGrid.content = m.top.content
+    m.posterGrid.jumpToItem = m.top.itemIndex
+
+    video = m.posterGrid.content.getChild(m.top.itemIndex)
+    m.title.text = video.title
+    m.description.text = video.description
+    m.poster.uri = video.thumbnail
 end sub
 
-
-sub setVideo(video)
-    if video <> invalid then
-        m.title.text = video.title
-        m.description.text = video.description
-        m.poster.uri = video.thumbnail
-    end if
-end sub
 
 sub OnFocusItem(event)
     index = event.getData()
     video = m.posterGrid.content.getChild(index)
-    setVideo(video)
-end sub
 
-
-sub OnJumpToItem(event) ' invoked when jumpToItem field is populated
-    index = event.getData()
-    video = m.posterGrid.content.GetChild(index) ' get metadata of focused item
-    setVideo(video)
+    m.top.itemIndex = index
+    m.title.text = video.title
+    m.description.text = video.description
+    m.poster.uri = video.thumbnail
 end sub
 
 

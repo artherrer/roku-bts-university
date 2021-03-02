@@ -52,13 +52,14 @@ function getVideoFromIds(ids)
         for each id in ids
             if video.id = id
                 node = createObject("roSGNode", "ThumbnailNode")
+                node.id = video.id
                 node.url = video.content.videos[0].url
-                node.format = video.content.videos[0].videoType
+                node.streamformat = video.content.videos[0].videoType
                 node.title = video.title
                 node.description = video.shortDescription
                 node.thumbnail = video.thumbnail
                 node.HDGRIDPOSTERURL = video.thumbnail
-                node.SHORTDESCRIPTIONLINE1 = video.title
+                node.SHORTDESCRIPTIONLINE1 = video.shortDescription
                 videos.push(node)
             end if                
         end for
