@@ -4,11 +4,30 @@ function init()
 	m.top.backgroundColor = "0x171F5E"
 	m.top.backgroundUri = "pkg:/images/bg_fhd.png"
 	m.loadingIndicator = m.top.FindNode("loadingIndicator") ' store loadingIndicator node to m
+    m.loadingIndicator.poster.observeField("loadStatus", "OnLoadSpinnerStatus")
+    m.loadingIndicator.poster.uri = "pkg:/images/loading.gif"
+    m.loadingIndicator.poster.width = 400.0
+    m.loadingIndicator.poster.height = 400.0
+
+    m.welcomeLabel = m.top.findNode("welcomeLabel")
+    getUsername()
 
 	InitScreenStack()
     ShowCategoryScreen()
     RunContentTask()
 end function
+
+
+
+sub OnLoadSpinnerStatus()
+    if(m.loadingIndicator.poster.loadStatus = "ready")
+      centerx = (1920 - m.loadingIndicator.poster.width) / 4
+      centery = (1080 - m.loadingIndicator.poster.width) / 2
+      m.loadingIndicator.translation = [ centerx, centery ]
+      m.loadingIndicator.visible = true
+    end if
+end sub
+
 
 function OnSelectOption(index)
     index = index.getData()
@@ -67,30 +86,23 @@ function OnkeyEvent(key as String, press as Boolean) as Boolean
 end function
 
 
-Function GetUsername() As Dynamic
+Function getUsername()
      sec = CreateObject("roRegistrySection", "User")
      if sec.Exists("username")
-         return sec.Read("username")
+         username = sec.Read("username")
+         m.welcomeLabel.text = "Welcome on board, " + username
      endif
-     return invalid
 End Function
 
 Function OnSetUsername() As Void
     username  = m.top.dialog.text
     sec = CreateObject("roRegistrySection", "User")
     sec.Write("username", username)
+    if username <> invalid or username <> ""
+        m.welcomeLabel.text = "Welcome on board, " + username
+    end if
 
-     userLabel = m.global.findNode("globalUsername")
-     if userLabel = invalid
-        label = CreateObject("roSGNode", "Label")
-        label.id = "globalUsername"
-        label.text = username
-        userLabel = m.global.AppendChild(label)
-     else
-        userLabel.text = username
-     end if
-
-     m.top.dialog.close = true
+    m.top.dialog.close = true
 End Function
 
 

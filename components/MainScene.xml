@@ -18,32 +18,15 @@
             logoUri="pkg:/images/hd_overhang_logo.png"
             translation="[0,60]"
         />
+
+        <Label 
+            translation="[1300,260]"
+            id="welcomeLabel"
+            text="Welcome on board"/>
         <!-- LoadingIndicator should be visible only in case of waiting for content -->
-        <Rectangle
-            id="loadingIndicator"
-            width="1920"
-            height="1080"
-            translation="[0, 0]"
-            color="0xFF0000"
-        >
-            <Poster 
-                width="300.0"
-                height="300.0"
-                uri="pkg:/images/loading.gif"
-            />
-        </Rectangle>
-        
-        <KeyboardDialog 
-            id="usernameKeyboard"
-            visible="false"
-            title="Set your username"/>
-
-
-        <Dialog 
-            id="aboutDialog"
-            visible="false"
-            title="About BTS University"
-            message="BTS University is the online platform where you can learn about software technologies completely free. Join our University with thousand students arround the world!"/>
+        <BusySpinner
+            id = "loadingIndicator"
+            visible = "false" />
 
         <Dialog 
             id="optionsDialog"
