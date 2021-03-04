@@ -44,7 +44,8 @@
                 rowLabelOffset="[[50,20]]"
                 focusXOffset="[50]"
                 showRowLabel="[true]"
-                rowFocusAnimationStyle="floatingfocus"/>
+                rowFocusAnimationStyle="floatingfocus"
+                loadingBitmapUri="pkg:/images/placeholder.png"/>
 
 
     </LayoutGroup>

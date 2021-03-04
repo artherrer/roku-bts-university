@@ -1,5 +1,6 @@
 sub init()
   m.video = m.top.findNode("videoPlayer")
+  m.warninglabel = m.top.findNode("warninglabel")
   m.video.setFocus(true)
   m.top.observeField("content", "OnVideoSet")
   m.top.observeField("visible", "OnVisibleSet")
@@ -41,3 +42,29 @@ sub OnVideoSet()
   m.video.content = videoContent
   m.video.control = "play"
 end sub
+
+
+' The OnKeyEvent() function receives remote control key events
+function OnkeyEvent(key as String, press as Boolean) as Boolean
+  result = false
+  if press
+    ' handle "back" key press
+    if key = "play"
+      ? m.video.control
+      if m.video.control = "play" or m.video.control = "resume" or m.video.control = "replay"
+        m.video.control = "pause"
+      else
+        m.video.control = "resume"
+      end if
+    end if
+
+    if key = "replay"
+      m.video.control = "replay"
+    end if
+
+    
+  end if
+  ' The OnKeyEvent() function must return true if the component handled the event,
+  ' or false if it did not handle the event.
+  return result
+end function

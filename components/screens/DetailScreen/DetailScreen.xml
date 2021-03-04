@@ -53,15 +53,11 @@
 
        
 
-        
-
-
         <LayoutGroup
-            translation="[1420, 220]"
+            translation="[1300, 360]"
             horizAlignment="left">
 
             <Label 
-                translation="[50, 0]"
                 text="In this playlist:"/>
 
             <PosterGrid
