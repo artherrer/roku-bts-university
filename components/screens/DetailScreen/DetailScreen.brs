@@ -1,6 +1,7 @@
 sub init()
     m.title = m.top.findNode("title")
     m.poster = m.top.findNode("poster")
+    m.duration = m.top.findNode("duration")
     m.description = m.top.findNode("description")
     m.playButton = m.top.findNode("playButton")
     m.posterGrid = m.top.findNode("posterGrid")
@@ -18,6 +19,7 @@ sub OnPosterGridUpdate(content)
     m.title.text = video.title
     m.description.text = video.description
     m.poster.uri = video.thumbnail
+    m.duration.text = "Video duration: " + GetTime(video.duration)
 end sub
 
 
@@ -29,6 +31,7 @@ sub OnFocusItem(event)
     m.title.text = video.title
     m.description.text = video.description
     m.poster.uri = video.thumbnail
+    m.duration.text = "Video duration: " + GetTime(video.duration)
 end sub
 
 

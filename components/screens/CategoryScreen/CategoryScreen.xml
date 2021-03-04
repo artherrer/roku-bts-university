@@ -13,21 +13,27 @@
         layoutDirection="vert"
         horizAlignment="left"
         itemSpacings="[40]">
+        
             <Label
                 id="welcomeLabel"
                 font="font:LargeBoldSystemFont"
-                text="What is BTS University?"/>
-
+                text="What is BTS University?"
+                visible="false"
+            />
             <Label
                 id="descriptionLabel"
                 wrap="true"
                 maxLines="6"
-                width="593"
+                width="750"
                 text="BTS University is the online platform where you can learn about software technologies completely free. Join our University with thousand students arround the world!"
+                visible="false"
             />
             <Label
+                id="questionLabel"
                 font="font:LargeBoldSystemFont"
-                text="What do you want to learn?"/>
+                text="What do you want to learn?"
+                visible="false"
+            />
 
             <RowList
                 id="rowList"
@@ -42,11 +48,5 @@
 
 
     </LayoutGroup>
-
-
-
-    <Dialog
-    visible="false"
-    id="exitDialog"/>
   </children>
 </component>

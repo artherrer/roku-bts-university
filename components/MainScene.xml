@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <component name="MainScene" extends="Scene">
+    <script type="text/brightscript" uri="pkg:/source/utils.brs" />
     <script type="text/brightscript" uri="pkg:/components/MainScene.brs" />
     <script type="text/brightscript" uri="pkg:/components/ui-logic/ScreenStackLogic.brs" />
     <script type="text/brightscript" uri="pkg:/components/ui-logic/ContentLogic.brs" />
@@ -23,17 +24,12 @@
             width="1920"
             height="1080"
             translation="[0, 0]"
-            visible="false"
             color="0xFF0000"
         >
-            <Label
-                text="Loading..."
-                width="1920"
-                height="1080"
-                translation="[0, 0]"
-                horizAlign="center"
-                vertAlign="center"
-                font="font:MediumBoldSystemFont"
+            <Poster 
+                width="300.0"
+                height="300.0"
+                uri="pkg:/images/loading.gif"
             />
         </Rectangle>
         

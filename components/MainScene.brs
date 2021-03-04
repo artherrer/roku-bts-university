@@ -2,6 +2,7 @@ function init()
     
     m.top.backgroundURI = ""
 	m.top.backgroundColor = "0x171F5E"
+	m.top.backgroundUri = "pkg:/images/bg_fhd.png"
 	m.loadingIndicator = m.top.FindNode("loadingIndicator") ' store loadingIndicator node to m
 
 	InitScreenStack()

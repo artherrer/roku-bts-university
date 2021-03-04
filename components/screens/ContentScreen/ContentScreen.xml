@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <component name="ContentScreen" extends="Group" >
     <script type="text/brightscript" uri="pkg:/components/screens/ContentScreen/ContentScreen.brs" />
+    <script type="text/brightscript" uri="pkg:/source/utils.brs" />
     <interface>
 		<field id="runPlaylist" type="int" alwaysnotify="true" alias="playButton.buttonSelected" />
 		<field id="itemSelected" type="int" alwaysnotify="true" alias="posterGrid.itemSelected" />
@@ -25,7 +26,7 @@
                     <Label
                         wrap="true"
                         maxLines="4"
-                        width="960"
+                        width="750"
                         text="This course will teach you handle the most used software technologies in the industry. Here you learn all about software development from cero to expert. Join us and enjoy it! "/>
                     
                     
@@ -38,6 +39,7 @@
                             text="Play all course"/>
 
                         <Label
+                            id="durationLabel"
                             horizAlign="center"
                             vertAlign = "center"
                             text="Total duration: 8:15:27"/>

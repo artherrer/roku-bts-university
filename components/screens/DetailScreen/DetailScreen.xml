@@ -2,6 +2,7 @@
 
 <component name="DetailScreen" extends="Group" initialFocus="playButton">
     <script type="text/brightscript" uri="DetailScreen.brs" />
+    <script type="text/brightscript" uri="pkg:/source/utils.brs" />
     <interface>
         <field id="content" type="node" />
         <field id="itemIndex" type="integer" value="0" alwaysNotify="true" />
@@ -42,8 +43,7 @@
                 width="960"/>
 
             <Label
-                id="duration"
-                text="Duration: 2:15:31"/>
+                id="duration"/>
 
             <Button 
                 id="playButton"

@@ -58,6 +58,7 @@ function getVideoFromIds(ids)
                 node.title = video.title
                 node.description = video.shortDescription
                 node.thumbnail = video.thumbnail
+                node.duration = video.content.duration
                 node.HDGRIDPOSTERURL = video.thumbnail
                 node.SHORTDESCRIPTIONLINE1 = video.shortDescription
                 videos.push(node)

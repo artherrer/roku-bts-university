@@ -2,6 +2,7 @@ sub init()
     m.playButton = m.top.FindNode("playButton")
     m.posterGrid = m.top.FindNode("posterGrid")
     m.title = m.top.FindNode("title")
+    m.durationLabel = m.top.FindNode("durationLabel")
     
     m.top.observeField("visible", "onVisibleChange")
     m.top.observeField("content", "OnLoadContent")
@@ -22,6 +23,16 @@ sub OnLoadContent()
     m.posterGrid.content = m.top.content
     m.posterGrid.jumpToItem = m.top.index
     m.posterGrid.setFocus(true)
+
+
+    totalDuration = 0
+    totalVideos = m.posterGrid.content.getChildCount()
+    videos = m.posterGrid.content.getChildren(totalVideos, 0)
+    for each video in videos
+        totalDuration += video.duration
+    end for
+
+    m.durationLabel.text = "Total duration: " + getTime(totalDuration)
 end sub
 
 
